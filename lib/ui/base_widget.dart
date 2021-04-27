@@ -12,12 +12,16 @@ class BaseWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
-    SizingInformation sizingInformation = SizingInformation(
-      orientation: mediaQuery.orientation,
-      deviceScreenType: getDeviceType(mediaQuery),
-      screenSize: mediaQuery.size,
-    );
 
-    return builder(context, sizingInformation);
+    return LayoutBuilder(builder: (context, boxConstraints) {
+      SizingInformation sizingInformation = SizingInformation(
+          orientation: mediaQuery.orientation,
+          deviceScreenType: getDeviceType(mediaQuery),
+          screenSize: mediaQuery.size,
+          localWidgetSize:
+              Size(boxConstraints.maxWidth, boxConstraints.maxHeight));
+
+      return builder(context, sizingInformation);
+    });
   }
 }

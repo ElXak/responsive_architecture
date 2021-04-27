@@ -8,7 +8,20 @@ class HomeView extends StatelessWidget {
     return BaseWidget(
       builder: (context, sizingInformation) => Scaffold(
         body: Center(
-          child: Text(sizingInformation.toString()),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                height: 150,
+                margin: EdgeInsets.all(50),
+                color: Colors.blue,
+                child: BaseWidget(
+                  builder: (context, sizingInfo) => Text(sizingInfo.toString()),
+                ),
+              ),
+              Text(sizingInformation.toString()),
+            ],
+          ),
         ),
       ),
     );
