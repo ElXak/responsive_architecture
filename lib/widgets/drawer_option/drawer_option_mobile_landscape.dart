@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-class DrawerOptionMobileLandscape extends StatelessWidget {
-  final IconData iconData;
+import '../../data_models/drawer_item_data.dart';
+import '../base_model_widget.dart';
 
-  const DrawerOptionMobileLandscape({Key key, this.iconData}) : super(key: key);
-
+class DrawerOptionMobileLandscape extends BaseModelWidget<DrawerItemData> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, DrawerItemData data) {
     return Container(
       height: 70,
       alignment: Alignment.center,
-      child: Icon(iconData),
+      child: Icon(data.iconData),
     );
   }
 }
