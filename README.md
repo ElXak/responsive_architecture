@@ -1,6 +1,6 @@
 # responsive_architecture
 
-Responsive UI Setup in Flutter with device_preview package.
+Responsive UI Setup in Flutter with device_preview and provider package.
 
 ## Getting Started
 
